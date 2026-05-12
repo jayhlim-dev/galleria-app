@@ -18,7 +18,7 @@ export function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[rgba(248,246,241,0.68)] backdrop-blur-xl">
+        <header className="sticky top-0 z-40 border-b bg-[rgba(248,246,241,0.68)] backdrop-blur-xl">
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 md:px-10">
                 <Link href="/" className="text-sm font-semibold uppercase tracking-[0.26em] no-underline">
                     Soleil Voss

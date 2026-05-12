@@ -4,7 +4,7 @@ export const artist = {
     name: 'Soleil Voss',
     location: 'Copenhagen, Denmark',
     portrait: '/images/dummy/portrait.svg',
-    heroImage: '/images/dummy/hero.svg',
+    heroImage: '/images/png/museum-looks.jpg',
     studioImage: '/images/dummy/studio-1.svg',
     bio: 'Soleil Voss composes atmospheric photographic and mixed-media works that navigate memory, architecture, and emotional weather.',
     statement:

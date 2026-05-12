@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
-            <body className="antialiased">
+            <body className="antialiased min-w-screen">
                 <SiteShell>{children}</SiteShell>
             </body>
         </html>

@@ -25,7 +25,14 @@ export function CinematicImage({
     return (
         <div ref={wrapperRef} className={`cinematic-image ${className}`}>
             <motion.div className="cinematic-image-layer" style={{ y, scale, opacity }}>
-                <Image src={src} alt={alt} fill={fill} priority={priority} sizes={sizes} className="object-cover" />
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill={fill}
+                    priority={priority}
+                    sizes={sizes}
+                    className="object-cover -top-15"
+                />
             </motion.div>
         </div>
     );
