@@ -1,0 +1,13 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="1500" fill="#F0ECE4"/>
+<rect width="1200" height="1500" fill="url(#paint0_linear_3_2)"/>
+<ellipse cx="606" cy="505" rx="244" ry="285" fill="#D8C6AE"/>
+<path d="M390 1070C390 889 487 742 607 742C726 742 823 889 823 1070V1500H390V1070Z" fill="#322C27"/>
+<path d="M450 510C450 421 522 350 611 350C700 350 772 421 772 510V627C772 716 700 788 611 788C522 788 450 716 450 627V510Z" fill="#E7D8C4"/>
+<defs>
+<linearGradient id="paint0_linear_3_2" x1="600" y1="0" x2="600" y2="1500" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EBE4D8"/>
+<stop offset="1" stop-color="#D8CEC1"/>
+</linearGradient>
+</defs>
+</svg>

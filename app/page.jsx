@@ -1,63 +1,59 @@
 import Link from 'next/link';
-import { Card } from 'components/card';
-import { ContextAlert } from 'components/context-alert';
-import { Markdown } from 'components/markdown';
-import { RandomQuote } from 'components/random-quote';
-import { getNetlifyContext } from 'utils';
-
-const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
-`;
-
-const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
-`;
-
-const ctx = getNetlifyContext();
+import { ArtworkCard } from 'components/gallery/cards';
+import { CinematicImage } from 'components/gallery/cinematic-image';
+import { ImagePreload } from 'components/gallery/image-preload';
+import { MotionSection } from 'components/gallery/motion-section';
+import { PageTransition } from 'components/gallery/page-transition';
+import { artist, getFeaturedArtworks } from 'data/gallery';
 
 export default function Page() {
-    return (
-        <div className="flex flex-col gap-12 sm:gap-16">
-            <section>
-                <ContextAlert className="mb-6" />
-                <h1 className="mb-4">Netlify Platform Starter – Next.js</h1>
-                <p className="mb-6 text-lg">
-                    Deploy the latest version of Next.js — including Turbopack, React Compiler, and the new caching APIs
-                    — on Netlify in seconds. No configuration or custom adapter required.
-                </p>
-                <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="btn btn-lg sm:min-w-64">
-                    Read the Docs
-                </Link>
-            </section>
-            {!!ctx && (
-                <section className="flex flex-col gap-4">
-                    <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
-                </section>
-            )}
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-            </section>
-        </div>
-    );
-}
+    const featured = getFeaturedArtworks();
+    const preloadSources = [artist.heroImage, ...featured.map((item) => item.image)];
 
-function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
-    if (ctx === 'dev') {
-        return (
-            <Card title={title}>
-                <p>Next.js will rebuild any page you navigate to, including static pages.</p>
-            </Card>
-        );
-    } else {
-        const now = new Date().toISOString();
-        return (
-            <Card title={title}>
-                <p>This page was statically-generated at build time ({now}).</p>
-            </Card>
-        );
-    }
+    return (
+        <PageTransition>
+            <div>
+                <ImagePreload sources={preloadSources} />
+                <section className="relative isolate overflow-hidden">
+                    <CinematicImage src={artist.heroImage} alt={artist.name} className="h-[88vh] min-h-[620px]" priority parallax={26} />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(9,10,12,0.15),rgba(9,10,12,0.62))]" />
+                    <div className="absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-7xl px-6 pb-14 md:px-10">
+                        <p className="text-xs uppercase tracking-[0.22em] text-neutral-100/80">Private Artist Residence</p>
+                        <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight text-neutral-100 md:text-7xl">
+                            {artist.name}
+                        </h1>
+                        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-neutral-100/85 md:text-base">
+                            A personal museum of still images, material memory, and editorial storytelling.
+                        </p>
+                        <Link href="/works" className="mt-9 inline-flex gallery-pill bg-neutral-100 text-neutral-900 no-underline">
+                            Enter Gallery
+                        </Link>
+                    </div>
+                </section>
+
+                <section className="mx-auto w-full max-w-7xl px-6 pb-24 pt-18 md:px-10 md:pt-24">
+                    <MotionSection className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+                        <p className="font-serif text-3xl leading-tight md:text-5xl">
+                            This is not a feed. It is a quiet archive where each artwork is given time, space, and silence.
+                        </p>
+                        <p className="text-sm leading-relaxed text-neutral-700 md:text-base">{artist.statement}</p>
+                    </MotionSection>
+
+                    <MotionSection className="mt-18" delay={0.08}>
+                        <div className="mb-8 flex items-end justify-between">
+                            <h2 className="font-serif text-4xl md:text-5xl">Featured Works</h2>
+                            <Link href="/works" className="text-xs uppercase tracking-[0.16em] no-underline text-neutral-600">
+                                View Full Collection
+                            </Link>
+                        </div>
+                        <div className="grid gap-6 md:grid-cols-2">
+                            {featured.map((artwork) => (
+                                <ArtworkCard key={artwork.id} artwork={artwork} artistName={artist.name} />
+                            ))}
+                        </div>
+                    </MotionSection>
+                </section>
+            </div>
+        </PageTransition>
+    );
 }
