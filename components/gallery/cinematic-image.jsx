@@ -18,7 +18,7 @@ export function CinematicImage({
         target: wrapperRef,
         offset: ['start end', 'end start']
     });
-    const y = useTransform(scrollYProgress, [0, 1], [`-${Math.max(4, parallax * 0.3)}%`, `${parallax}%`]);
+    const y = useTransform(scrollYProgress, [0, 1], [`-${Math.max(4, parallax * 0.5)}%`, `${parallax}%`]);
     const scale = useTransform(scrollYProgress, [0, 1], [1.08, 1]);
     const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.65, 1, 1]);
 
@@ -31,7 +31,7 @@ export function CinematicImage({
                     fill={fill}
                     priority={priority}
                     sizes={sizes}
-                    className="object-cover -top-15"
+                    className="object-cover -top-13!"
                 />
             </motion.div>
         </div>
