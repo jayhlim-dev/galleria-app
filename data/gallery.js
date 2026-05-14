@@ -50,7 +50,7 @@ export const artworks = [
         slug: 'after-rain-study',
         title: 'After Rain Study',
         artistSlug: artist.slug,
-        year: '2025',
+        year: '2026',
         medium: 'Silver gelatin print',
         dimensions: '95 x 70 cm',
         story: 'Architecture dissolves into reflections while the city holds its breath.',
@@ -78,7 +78,7 @@ export const artworks = [
         slug: 'hushed-summit',
         title: 'Hushed Summit',
         artistSlug: artist.slug,
-        year: '2024',
+        year: '2025',
         medium: 'Mixed media on panel',
         dimensions: '150 x 200 cm',
         story: 'An imagined summit where scale shifts between body and cloud.',
@@ -98,7 +98,7 @@ export const artworks = [
         story: 'Layers of stitched light recalling a room held in winter memory.',
         category: 'Textile',
         featured: false,
-        image: '/images/dummy/artwork-1.svg',
+        image: '/images/png/g-5.png',
         processImages: ['/images/dummy/studio-2.svg']
     },
     {
@@ -112,7 +112,7 @@ export const artworks = [
         story: 'An intimate map of domestic memory through soft materials.',
         category: 'Textile',
         featured: false,
-        image: '/images/dummy/artwork-2.svg',
+        image: '/images/png/g-6.png',
         processImages: []
     },
     {
@@ -126,7 +126,7 @@ export const artworks = [
         story: 'A layered work built from archive fragments and erased correspondence.',
         category: 'Mixed Media',
         featured: false,
-        image: '/images/dummy/artwork-3.svg',
+        image: '/images/png/g-7.png',
         processImages: []
     },
     {
@@ -140,7 +140,7 @@ export const artworks = [
         story: 'Painted stillness tracing a corridor that never fully resolves into architecture.',
         category: 'Painting',
         featured: false,
-        image: '/images/dummy/artwork-4.svg',
+        image: '/images/png/g-8.png',
         processImages: []
     }
 ];
