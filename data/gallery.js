@@ -203,6 +203,26 @@ export const manifesto = {
     copy: 'This site is built as a sanctuary for one artist and one evolving body of work. The interface steps back, so emotion can step forward.'
 };
 
+export const footerContent = {
+    eyebrow: 'Soleil Voss Studio',
+    title: 'Built for Quiet Looking',
+    description:
+        'An elegant archive of exhibitions, works, and written traces.',
+    cta: {
+        label: 'Contact Studio',
+        href: 'mailto:studio@soleilvoss.com'
+    },
+    navigationLabel: 'Navigation',
+    navigation: [
+        { href: '/works', label: 'Works' },
+        { href: '/journal', label: 'Journal' },
+        { href: '/exhibitions', label: 'Exhibitions' },
+        { href: '/about', label: 'About' },
+        { href: '/contact', label: 'Contact' }
+    ],
+    contactEmail: 'studio@soleilvoss.com'
+};
+
 export const exhibitions = [
     { year: '2026', title: 'Quiet Geometry', venue: 'Maison Verre, Paris', note: 'Solo exhibition' },
     { year: '2025', title: 'Intervals Of Weather', venue: 'Lumen Rooms, Copenhagen', note: 'Solo exhibition' },
@@ -244,3 +264,5 @@ export function getArtworksByCategory(category) {
     }
     return artworks.filter((artwork) => artwork.category === category);
 }
+
+
