@@ -59,12 +59,28 @@ export function Navbar() {
                     </nav>
                     <button
                         type="button"
-                        className="rounded-full border border-(--line) px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition hover:border-neutral-400 hover:bg-black/5 md:hidden"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full  hover:border-neutral-400 hover:bg-black/5 md:hidden"
                         onClick={() => setOpen((prev) => !prev)}
-                        aria-label="Toggle navigation"
+                        aria-label={open ? 'Close navigation' : 'Open navigation'}
                         aria-expanded={open}
                     >
-                        {open ? 'Close' : 'Menu'}
+                        <span className="relative block h-3.5 w-4">
+                            <span
+                                className={`absolute left-0 top-0 h-px w-4 bg-neutral-800 transition duration-300 ease-out ${
+                                    open ? 'translate-y-[7px] rotate-45' : ''
+                                }`}
+                            />
+                            <span
+                                className={`absolute left-0 top-[7px] h-px w-4 bg-neutral-800 transition duration-300 ease-out ${
+                                    open ? 'opacity-0' : 'opacity-100'
+                                }`}
+                            />
+                            <span
+                                className={`absolute left-0 top-[14px] h-px w-4 bg-neutral-800 transition duration-300 ease-out ${
+                                    open ? 'translate-y-[-7px] -rotate-45' : ''
+                                }`}
+                            />
+                        </span>
                     </button>
                 </div>
             </header>
