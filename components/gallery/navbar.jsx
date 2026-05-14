@@ -39,9 +39,27 @@ export function Navbar() {
                     <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em] no-underline">
                         Soleil Voss
                     </Link>
+                    <nav className="hidden min-w-0 flex-1 items-center justify-end gap-1 md:flex lg:gap-2">
+                        {navItems.map((item) => {
+                            const isActive = isActiveRoute(item.href);
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`rounded-full px-2 py-2 text-[10px] uppercase tracking-[0.12em] no-underline transition lg:px-3 lg:text-[11px] lg:tracking-[0.18em] ${
+                                        isActive
+                                            ? 'bg-black/5 text-neutral-950'
+                                            : 'text-neutral-600 hover:bg-black/5 hover:text-neutral-900'
+                                    }`}
+                                >
+                                    {item.label}
+                                </Link>
+                            );
+                        })}
+                    </nav>
                     <button
                         type="button"
-                        className="rounded-full border border-(--line) px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition hover:border-neutral-400 hover:bg-black/5"
+                        className="rounded-full border border-(--line) px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition hover:border-neutral-400 hover:bg-black/5 md:hidden"
                         onClick={() => setOpen((prev) => !prev)}
                         aria-label="Toggle navigation"
                         aria-expanded={open}
@@ -58,7 +76,7 @@ export function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed inset-0 z-60 bg-black/40 backdrop-blur-sm"
+                        className="fixed inset-0 z-60 bg-black/40 backdrop-blur-sm md:hidden"
                     >
                         <button
                             type="button"

@@ -12,7 +12,7 @@ export default function Page() {
 
     return (
         <PageTransition>
-            <div>
+            <div >
                 <ImagePreload sources={preloadSources} />
                 <section className="relative isolate overflow-hidden">
                     <CinematicImage
@@ -42,16 +42,16 @@ export default function Page() {
                     </div>
                 </section>
 
-                <section className="mx-auto w-full max-w-7xl px-6 pb-24 pt-18 md:px-10 md:pt-24">
-                    <MotionSection className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-                        <p className="font-serif text-3xl leading-tight md:text-5xl">
-                            This is not a feed. It is a quiet archive where each artwork is given time, space, and
-                            silence.
+                <section className="w-full px-6 pb-24 pt-18 md:px-[20%] md:pt-24">
+                    <MotionSection className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] py-10">
+                        <p className="font-serif text-3xl leading-tight md:text-4xl">
+                        Not a feed.
+                        An archive of silence, where each painting is allowed to breathe slowly.
                         </p>
                         <p className="text-sm leading-relaxed text-neutral-700 md:text-base">{artist.statement}</p>
                     </MotionSection>
 
-                    <MotionSection className="mt-18" delay={0.08}>
+                    <MotionSection className="mt-18 w-full" delay={0.08}>
                         <div className="mb-8 flex items-end justify-between">
                             <h2 className="font-serif text-4xl md:text-5xl">Featured Works</h2>
                             <Link

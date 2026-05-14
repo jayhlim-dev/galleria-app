@@ -40,8 +40,8 @@ export function ArtworkCard({ artwork, artistName, className = '' }) {
         <CardMotion className={`group ${className}`}>
             <Link href={`/artworks/${artwork.slug}`} className="block no-underline">
                 <div className="relative aspect-4/3 overflow-hidden rounded-xl">
-                    <Image src={artwork.image} alt={artwork.title} fill className="object-cover transition duration-700 group-hover:scale-[1.05]" />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/65 via-black/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100">
+                    <Image src={artwork.image} alt={artwork.title} fill className="object-cover transition duration-700 group-hover:scale-[1.1]" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/65 via-black/20  transition duration-500">
                         <div className="absolute inset-x-0 bottom-0 p-5 text-neutral-100">
                             <h4 className="font-serif text-2xl">{artwork.title}</h4>
                             <p className="mt-2 text-xs uppercase tracking-[0.14em]">
@@ -49,13 +49,21 @@ export function ArtworkCard({ artwork, artistName, className = '' }) {
                             </p>
                         </div>
                     </div>
+                    {/* <div className="absolute inset-0 bg-linear-to-t from-black/65 via-black/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100">
+                        <div className="absolute inset-x-0 bottom-0 p-5 text-neutral-100">
+                            <h4 className="font-serif text-2xl">{artwork.title}</h4>
+                            <p className="mt-2 text-xs uppercase tracking-[0.14em]">
+                                {artwork.year} · {artwork.medium}
+                            </p>
+                        </div>
+                    </div> */}
                 </div>
-                <div className="mt-4">
+                {/* <div className="mt-4">
                     <h4 className="font-serif text-xl text-neutral-900">{artwork.title}</h4>
                     <p className="mt-2 text-xs uppercase tracking-[0.13em] text-neutral-600">
                         {artistName} · {artwork.year}
                     </p>
-                </div>
+                </div> */}
             </Link>
         </CardMotion>
     );

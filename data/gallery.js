@@ -8,24 +8,9 @@ export const artist = {
     studioImage: '/images/dummy/studio-1.svg',
     bio: 'Soleil Voss composes atmospheric photographic and mixed-media works that navigate memory, architecture, and emotional weather.',
     statement:
-        'My practice is about listening to rooms. I return to the same spaces until they become less like places and more like states of mind.',
+        'My practice lingers within rooms, returning to them repeatedly until space dissolves into memory, and memory into atmosphere.\n\nWhat remains is not documentation, but residue.\n\nA quiet trace of presence, absence, and time.',
     philosophy:
         'I do not search for spectacle. I search for a tempo where an image can breathe long enough for someone to remember themselves.',
-    inspirations: ['Andrei Tarkovsky', 'Nordic winter light', 'Monastic architecture', 'Private diaries', 'Worn museum textiles'],
-    journals: [
-        {
-            id: 'journal-artist-1',
-            title: 'On Waiting For Light',
-            excerpt: 'In the studio, stillness is not empty. It is where form begins to breathe.',
-            date: 'April 02, 2026'
-        },
-        {
-            id: 'journal-artist-2',
-            title: 'Rooms As Instruments',
-            excerpt: 'The wall does not frame the work; it performs it.',
-            date: 'March 11, 2026'
-        }
-    ],
     exhibitions: [
         { year: '2026', title: 'Quiet Geometry', venue: 'Maison Verre, Paris' },
         { year: '2025', title: 'Intervals Of Weather', venue: 'Lumen Rooms, Copenhagen' },
@@ -56,7 +41,7 @@ export const artworks = [
         story: 'A study of morning light drifting through an empty courtyard after rain.',
         category: 'Photography',
         featured: true,
-        image: '/images/dummy/artwork-1.svg',
+        image: '/images/png/g-1.png',
         processImages: ['/images/dummy/studio-1.svg', '/images/dummy/studio-2.svg']
     },
     {
@@ -70,7 +55,7 @@ export const artworks = [
         story: 'Architecture dissolves into reflections while the city holds its breath.',
         category: 'Photography',
         featured: true,
-        image: '/images/dummy/artwork-2.svg',
+        image: '/images/png/g-2.png',
         processImages: []
     },
     {
@@ -84,7 +69,7 @@ export const artworks = [
         story: 'A painted horizon assembled from memory fragments and mountain weather logs.',
         category: 'Painting',
         featured: true,
-        image: '/images/dummy/artwork-3.svg',
+        image: '/images/png/g-3.png',
         processImages: ['/images/dummy/studio-3.svg']
     },
     {
@@ -97,8 +82,8 @@ export const artworks = [
         dimensions: '150 x 200 cm',
         story: 'An imagined summit where scale shifts between body and cloud.',
         category: 'Mixed Media',
-        featured: false,
-        image: '/images/dummy/artwork-4.svg',
+        featured: true, // turn on for featured artworks
+        image: '/images/png/g-4.png',
         processImages: []
     },
     {

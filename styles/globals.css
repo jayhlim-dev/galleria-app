@@ -24,14 +24,14 @@
         --foreground: #161412;
         --line: rgba(40, 34, 28, 0.17);
     }
-
+/* 
     @media (prefers-color-scheme: dark) {
         :root {
             --background: #121110;
             --foreground: #ece8e1;
             --line: rgba(238, 232, 224, 0.19);
         }
-    }
+    } */
 
     body {
         @apply min-h-screen;
