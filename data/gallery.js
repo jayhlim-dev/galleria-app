@@ -7,8 +7,9 @@ export const artist = {
     heroImage: '/images/png/museum-looks-landscape.png',
     studioImage: '/images/dummy/studio-1.svg',
     bio: 'Soleil Voss composes atmospheric photographic and mixed-media works that navigate memory, architecture, and emotional weather.',
+    statementTitle: 'The older I become, the more I realize memory has its own architecture.',
     statement:
-        'My practice lingers within rooms, returning to them repeatedly until space dissolves into memory, and memory into atmosphere.\n\nWhat remains is not documentation, but residue.\n\nA quiet trace of presence, absence, and time.',
+        'I am drawn to spaces that carry emotional weight long after moments have passed. Through painting, I try to translate that invisible feeling into atmosphere, texture, and stillnes.',
     philosophy:
         'I do not search for spectacle. I search for a tempo where an image can breathe long enough for someone to remember themselves.',
     exhibitions: [

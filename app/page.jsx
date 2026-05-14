@@ -12,7 +12,7 @@ export default function Page() {
 
     return (
         <PageTransition>
-            <div >
+            <div>
                 <ImagePreload sources={preloadSources} />
                 <section className="relative isolate overflow-hidden">
                     <CinematicImage
@@ -22,43 +22,49 @@ export default function Page() {
                         priority
                         parallax={26}
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(9,10,12,0.15),rgba(9,10,12,0.62))]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(9,10,12,0.08),rgba(9,10,12,0.42))] md:bg-[linear-gradient(to_bottom,rgba(9,10,12,0.15),rgba(9,10,12,0.62))]" />
                     <div className="absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-7xl px-6 pb-14 md:px-10">
-                        <p className="text-xs uppercase tracking-[0.22em] text-neutral-100/80">
-                            Private Artist Residence
-                        </p>
-                        <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight text-neutral-100 md:text-7xl">
+                        <p className="text-xs uppercase tracking-[0.22em] text-neutral-100/80">The Residence</p>
+                        <h1 className="max-w-4xl font-serif text-5xl leading-tight text-neutral-100 md:text-7xl">
                             {artist.name}
                         </h1>
-                        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-neutral-100/85 md:text-base">
-                            A personal museum of still images, material memory, and editorial storytelling.
+                        <p className="mt-1 max-w-2xl text-sm leading-relaxed text-neutral-100/85 md:text-base">
+                            Where rooms become memory, and memory becomes atmosphere
                         </p>
                         <Link
                             href="/works"
-                            className="mt-9 inline-flex gallery-pill bg-neutral-100 text-neutral-900 no-underline"
+                            className="mt-6 inline-flex gallery-pill bg-neutral-100 text-neutral-900 no-underline"
                         >
                             Enter Gallery
                         </Link>
                     </div>
                 </section>
 
-                <section className="w-full px-6 pb-24 pt-18 md:px-[20%] md:pt-24">
-                    <MotionSection className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] py-10">
-                        <p className="font-serif text-3xl leading-tight md:text-4xl">
-                        Not a feed.
-                        An archive of silence, where each painting is allowed to breathe slowly.
-                        </p>
+                <section className="w-full px-6 pb-24 pt-18 md:px-[10%] md:pt-20">
+                    <MotionSection
+                        className="grid lg:gap-10 lg:grid-cols-[1.1fr_0.9fr] py-10 gap-6"
+                        revealOnScroll={false}
+                    >
+                        <p className="font-serif text-3xl leading-tight md:text-4xl">{artist.statementTitle}</p>
                         <p className="text-sm leading-relaxed text-neutral-700 md:text-base">{artist.statement}</p>
                     </MotionSection>
 
                     <MotionSection className="mt-18 w-full" delay={0.08}>
-                        <div className="mb-8 flex items-end justify-between">
-                            <h2 className="font-serif text-4xl md:text-5xl">Featured Works</h2>
+                        <div className="lg:mb-8 flex items-start gap-3 sm:flex-row sm:items-end justify-between mb-6">
+                            <h2 className="font-serif text-4xl leading-none sm:text-[2.65rem] md:text-5xl">
+                                Featured Works
+                            </h2>
                             <Link
                                 href="/works"
-                                className="text-xs uppercase tracking-[0.16em] no-underline text-neutral-600"
+                                aria-label="View full collection"
+                                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-(--line) text-neutral-700 no-underline transition hover:border-neutral-400 hover:text-neutral-900 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2"
                             >
-                                View Full Collection
+                                <span className="hidden text-xs uppercase tracking-[0.16em] sm:inline">
+                                    View Full Collection
+                                </span>
+                                <span aria-hidden="true" className="text-base leading-none">
+                                    &rarr;
+                                </span>
                             </Link>
                         </div>
                         <div className="grid gap-6 md:grid-cols-2">
