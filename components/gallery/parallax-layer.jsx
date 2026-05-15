@@ -46,7 +46,9 @@ export function ParallaxLayer({ children, className = '', yPercent = 16, scale =
             onPointerLeave={handlePointerLeave}
             style={{ overflow: 'hidden' }}
         >
-            <motion.div style={{ y, x: mouse ? x : 0, translateY: mouse ? yMouse : 0, scale }}>{children}</motion.div>
+            <motion.div className="relative h-full w-full" style={{ y, x: mouse ? x : 0, translateY: mouse ? yMouse : 0, scale }}>
+                {children}
+            </motion.div>
         </motion.div>
     );
 }

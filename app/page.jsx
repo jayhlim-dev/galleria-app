@@ -4,11 +4,13 @@ import { CinematicImage } from 'components/gallery/cinematic-image';
 import { ImagePreload } from 'components/gallery/image-preload';
 import { MotionSection } from 'components/gallery/motion-section';
 import { PageTransition } from 'components/gallery/page-transition';
-import { artist, getFeaturedArtworks } from 'data/gallery';
+import { artist, exhibitions, getFeaturedArtworks, journalEntries } from 'data/gallery';
 
 export default function Page() {
     const featured = getFeaturedArtworks();
     const preloadSources = [artist.heroImage, ...featured.map((item) => item.image)];
+    const journalPreview = journalEntries.slice(0, 2);
+    const exhibitionsPreview = exhibitions.slice(0, 3);
 
     return (
         <PageTransition>
@@ -70,6 +72,73 @@ export default function Page() {
                         <div className="grid gap-6 md:grid-cols-2">
                             {featured.map((artwork) => (
                                 <ArtworkCard key={artwork.id} artwork={artwork} artistName={artist.name} />
+                            ))}
+                        </div>
+                    </MotionSection>
+
+                    <MotionSection className="mt-22 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]" delay={0.12}>
+                        <article className="rounded-2xl border border-(--line) bg-[rgba(255,255,255,0.5)] p-7 md:p-9">
+                            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500">About</p>
+                            <h3 className="mt-4 max-w-xl font-serif text-3xl leading-tight md:text-4xl">
+                                A private practice shaped by memory, stillness, and emotional architecture.
+                            </h3>
+                            <p className="mt-5 text-sm leading-relaxed text-neutral-700 md:text-base">{artist.bio}</p>
+                            <p className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base">{artist.philosophy}</p>
+                            <Link
+                                href="/about"
+                                className="mt-7 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-neutral-600 no-underline transition hover:text-neutral-900"
+                            >
+                                Read Full Profile
+                                <span aria-hidden="true">&rarr;</span>
+                            </Link>
+                        </article>
+
+                        <article className="rounded-2xl border border-(--line) bg-[rgba(255,255,255,0.5)] p-7 md:p-9">
+                            <div className="mb-6 flex items-center justify-between">
+                                <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500">Journal</p>
+                                <Link
+                                    href="/journal"
+                                    className="text-[11px] uppercase tracking-[0.16em] text-neutral-600 no-underline transition hover:text-neutral-900"
+                                >
+                                    View All
+                                </Link>
+                            </div>
+                            <div className="space-y-6">
+                                {journalPreview.map((entry) => (
+                                    <article key={entry.id}>
+                                        <p className="text-[11px] uppercase tracking-[0.14em] text-neutral-500">{entry.date}</p>
+                                        <h4 className="mt-2 font-serif text-2xl leading-tight text-neutral-900">{entry.title}</h4>
+                                        <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.excerpt}</p>
+                                    </article>
+                                ))}
+                            </div>
+                        </article>
+                    </MotionSection>
+
+                    <MotionSection className="mt-20 rounded-2xl border border-(--line) bg-[rgba(255,255,255,0.5)] p-7 md:p-9" delay={0.16}>
+                        <div className="mb-7 flex items-center justify-between">
+                            <h3 className="font-serif text-3xl md:text-4xl">Exhibitions</h3>
+                            <Link
+                                href="/exhibitions"
+                                className="text-[11px] uppercase tracking-[0.16em] text-neutral-600 no-underline transition hover:text-neutral-900"
+                            >
+                                Full Timeline
+                            </Link>
+                        </div>
+                        <div className="space-y-4">
+                            {exhibitionsPreview.map((entry) => (
+                                <article
+                                    key={`${entry.year}-${entry.title}`}
+                                    className="flex flex-col gap-2 border-b border-(--line) pb-4 last:border-b-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between"
+                                >
+                                    <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-500">{entry.year}</p>
+                                    <div className="sm:text-right">
+                                        <p className="font-serif text-2xl leading-tight text-neutral-900">{entry.title}</p>
+                                        <p className="mt-1 text-sm text-neutral-700">
+                                            {entry.venue} {entry.note ? `· ${entry.note}` : ''}
+                                        </p>
+                                    </div>
+                                </article>
                             ))}
                         </div>
                     </MotionSection>
