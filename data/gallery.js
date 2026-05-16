@@ -6,12 +6,19 @@ export const artist = {
     portrait: '/images/dummy/portrait.svg',
     heroImage: '/images/png/museum-looks-landscape.png',
     studioImage: '/images/dummy/studio-1.svg',
-    bio: 'Soleil Voss composes atmospheric photographic and mixed-media works that navigate memory, architecture, and emotional weather.',
+    bio: 'Soleil Voss is a Copenhagen-based painter and mixed-media artist whose work explores memory, solitude, architecture, and the emotional residue carried by physical spaces. Through layered textures, muted palettes, and restrained compositions, her paintings balance stillness and atmosphere, creating works that feel both intimate and cinematic.',
     statementTitle: 'The older I become, the more I realize memory has its own architecture.',
+    quote: 'I am drawn to spaces that continue to hold emotion long after a moment has ended. In the studio, I try to translate that invisible weight into atmosphere, texture, and stillness.',
     statement:
-        'I am drawn to spaces that carry emotional weight long after moments have passed. Through painting, I try to translate that invisible feeling into atmosphere, texture, and stillnes.',
+        'My process is slow and observational — shaped by light, weather, passing time, and the subtle tension between presence and disappearance.',
     philosophy:
-        'I do not search for spectacle. I search for a tempo where an image can breathe long enough for someone to remember themselves.',
+        'I do not search for spectacle. I see painting as a slower form of listening — a way to create room for reflection, memory, and emotional connection. Each work is intended to breathe quietly, allowing the viewer to pause, linger, and discover something of themselves within the stillness.',
+    inspirations: [
+        'Interior light that turns a room into a mood before anyone speaks.',
+        'Weather systems translated into surface, edge, and negative space.',
+        'Archives, letters, and the way memory edits geography.',
+        'Long walks through cities where history layers over the present.'
+    ],
     exhibitions: [
         { year: '2026', title: 'Quiet Geometry', venue: 'Maison Verre, Paris' },
         { year: '2025', title: 'Intervals Of Weather', venue: 'Lumen Rooms, Copenhagen' },

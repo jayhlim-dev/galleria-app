@@ -4,7 +4,7 @@ export function Timeline({ items = [] }) {
     }
 
     return (
-        <ol className="space-y-8 border-l border-[var(--line)] pl-6">
+        <ol className="space-y-8 border-l border-(--line) pl-6">
             {items.map((item) => (
                 <li key={`${item.year}-${item.title}`} className="relative">
                     <span className="absolute -left-[30px] top-2 h-2.5 w-2.5 rounded-full bg-neutral-700" />
